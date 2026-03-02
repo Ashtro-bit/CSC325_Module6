@@ -9,6 +9,8 @@ import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.UserRecord;
+import javafx.scene.control.cell.PropertyValueFactory;
+
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -21,13 +23,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class AccessFBView {
 
-
+    @FXML private TableView<Person> tableView;
+    @FXML private TableColumn<Person, String> nameColumn;
+    @FXML private TableColumn<Person, String> majorColumn;
+    @FXML private TableColumn<Person, Integer> ageColumn;
      @FXML
     private TextField nameField;
     @FXML
@@ -40,6 +43,7 @@ public class AccessFBView {
     private Button readButton;
     @FXML
     private TextArea outputField;
+
      private boolean key;
     private ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
     private Person person;
@@ -47,12 +51,21 @@ public class AccessFBView {
         return listOfUsers;
     }
 
-    void initialize() {
+    @FXML
+    public void initialize() {
 
-        AccessDataViewModel accessDataViewModel = new AccessDataViewModel();
-        nameField.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
-        majorField.textProperty().bindBidirectional(accessDataViewModel.userMajorProperty());
-        writeButton.disableProperty().bind(accessDataViewModel.isWritePossibleProperty().not());
+        AccessDataViewModel viewModel = new AccessDataViewModel();
+
+        nameField.textProperty().bindBidirectional(viewModel.userNameProperty());
+        majorField.textProperty().bindBidirectional(viewModel.userMajorProperty());
+        writeButton.disableProperty().bind(viewModel.isWritePossibleProperty().not());
+
+        // Bind columns to Person properties
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        majorColumn.setCellValueFactory(new PropertyValueFactory<>("major"));
+        ageColumn.setCellValueFactory(new PropertyValueFactory<>("age"));
+
+        tableView.setItems(listOfUsers);
     }
 
     @FXML

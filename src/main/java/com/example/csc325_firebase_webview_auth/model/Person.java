@@ -6,11 +6,8 @@ package com.example.csc325_firebase_webview_auth.model;
 
 /**
  *
- * @author MoaathAlrajab
- *
- *
- *
- *
+ * @author Fransisco Payes
+
  * Model:
  *
  *
