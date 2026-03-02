@@ -3,6 +3,7 @@ package com.example.csc325_firebase_webview_auth.view;
 import com.example.csc325_firebase_webview_auth.model.FirebaseAuthService;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import com.example.csc325_firebase_webview_auth.model.FirebaseConfig;
 
 import java.io.IOException;
 
@@ -11,13 +12,10 @@ import java.io.IOException;
  * Handles user login using Firebase Authentication.
  */
 public class LoginController {
-
-    // Replace with your Firebase Web API Key
-    private static final String FIREBASE_WEB_API_KEY = "AIzaSyC6j5DsQFjZWFcRyMdR0yE62MmTM_d9TlQ";
-
-    // Service responsible for talking to Firebase
     private final FirebaseAuthService auth =
-            new FirebaseAuthService(FIREBASE_WEB_API_KEY);
+            new FirebaseAuthService(
+                    com.example.csc325_firebase_webview_auth.model.FirebaseConfig.getApiKey()
+            );
 
     @FXML private TextField emailField;
     @FXML private PasswordField passwordField;
