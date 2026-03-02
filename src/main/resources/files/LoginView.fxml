@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<VBox xmlns="http://javafx.com/javafx/17.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.csc325_firebase_webview_auth.view.LoginController"
+      spacing="14" alignment="CENTER" prefWidth="500" prefHeight="420">
 
-</AnchorPane>
+    <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+    <Label text="Sign In" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+
+    <VBox spacing="8" maxWidth="320">
+        <Label text="Email"/>
+        <TextField fx:id="emailField" promptText="you@example.com"/>
+
+        <Label text="Password"/>
+        <PasswordField fx:id="passwordField" promptText="••••••••"/>
+    </VBox>
+
+    <Button text="Login" onAction="#onLogin" maxWidth="320" />
+
+    <Label fx:id="statusLabel" text="" style="-fx-text-fill: red;" wrapText="true" maxWidth="320"/>
+
+    <Hyperlink text="No account? Create one" onAction="#goToRegister"/>
+</VBox>

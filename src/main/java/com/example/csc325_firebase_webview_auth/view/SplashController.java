@@ -30,7 +30,7 @@ public class SplashController implements Initializable {
 
     private void goToMain() {
         try {
-            App.setRoot("/files/AccessFBView.fxml");
+            App.setRoot("/files/LoginView.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
