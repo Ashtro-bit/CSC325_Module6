@@ -12,10 +12,10 @@ import java.io.IOException;
  * Handles user login using Firebase Authentication.
  */
 public class LoginController {
+    private static final String FIREBASE_WEB_API_KEY = "AIzaSyCmFt40pPY_-1Q2Mwa0_gNknO8xLZUHuB4";
+
     private final FirebaseAuthService auth =
-            new FirebaseAuthService(
-                    com.example.csc325_firebase_webview_auth.model.FirebaseConfig.getApiKey()
-            );
+            new FirebaseAuthService(FIREBASE_WEB_API_KEY);
 
     @FXML private TextField emailField;
     @FXML private PasswordField passwordField;

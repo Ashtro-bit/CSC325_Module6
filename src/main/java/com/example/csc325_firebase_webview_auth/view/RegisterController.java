@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class RegisterController {
 
-    private static final String FIREBASE_WEB_API_KEY = "AIzaSyC6j5DsQFjZWFcRyMdR0yE62MmTM_d9TlQ";
+    private static final String FIREBASE_WEB_API_KEY = "AIzaSyCmFt40pPY_-1Q2Mwa0_gNknO8xLZUHuB4";
 
     private final FirebaseAuthService auth =
             new FirebaseAuthService(FIREBASE_WEB_API_KEY);
