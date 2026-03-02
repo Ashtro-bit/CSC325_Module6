@@ -1,0 +1,12 @@
+# Firebase secret key
+key.json
+
+# Maven build output
+target/
+
+# IntelliJ files
+.idea/
+*.iml
+
+# Logs
+*.log
