@@ -1,0 +1,94 @@
+/**
+   * Application Base
+   */
+
+.root {
+    -fx-font-family: "Segoe UI", Arial;
+    -fx-background-color: white;
+}
+
+/**
+   * Layout Panels
+   */
+
+.left-sidebar {
+    -fx-background-color: #b07a2a;
+}
+
+.right-panel {
+    -fx-background-color: #66e000;
+}
+
+.bottom-bar {
+    -fx-background-color: #b3b3b3;
+}
+
+/**
+   * Form Inputs
+  */
+
+.text-field,
+.password-field {
+    -fx-background-color: white;
+    -fx-border-color: #7a7a7a;
+    -fx-border-radius: 3;
+    -fx-background-radius: 3;
+    -fx-padding: 7 10;
+    -fx-prompt-text-fill: #9b9b9b;
+}
+
+/**
+   * CRUD Buttons
+   */
+
+.btn-crud {
+    -fx-background-color: #b07a2a;
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+
+    -fx-background-radius: 14;
+    -fx-padding: 14 18;
+
+    -fx-min-width: 220;
+    -fx-min-height: 52;
+
+    -fx-cursor: hand;
+}
+
+.btn-crud:hover {
+    -fx-background-color: #c78933;
+}
+
+/**
+   * Table Styling
+   */
+
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #9c9c9c;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-size: 34px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+}
+
+/**
+   * Profile Image Container
+   */
+
+.profile-frame {
+    -fx-background-color: white;
+    -fx-padding: 12;
+}
