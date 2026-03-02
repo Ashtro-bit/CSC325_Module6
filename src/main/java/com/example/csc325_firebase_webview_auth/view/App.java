@@ -21,11 +21,16 @@ public class App extends Application {
     public static Scene scene;
     private final FirestoreContext contxtFirebase = new FirestoreContext();
 
+
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         fstore = contxtFirebase.firebase();
         fauth = FirebaseAuth.getInstance();
         scene = new Scene(loadFXML("/files/SplashView.fxml"));
+        scene.getStylesheets().add(
+                App.class.getResource("/styles/theme.css").toExternalForm()
+        );
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -38,6 +43,8 @@ public class App extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml ));
         return fxmlLoader.load();
     }
+
+
 
     public static void main(String[] args) {
         launch(args);
